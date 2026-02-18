@@ -1,0 +1,306 @@
+.ingredient-input {
+    margin-bottom: 1.5rem;
+}
+
+.ingredient-input__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.ingredient-input__header h3 {
+    font-size: 1.15rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ingredient-input__icon {
+    font-size: 1.3rem;
+}
+
+.ingredient-input__count {
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    color: white;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── input field ── */
+.ingredient-input__field {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.ingredient-input__input-wrap {
+    flex: 1;
+    position: relative;
+}
+
+.ingredient-input__add-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+    white-space: nowrap;
+    font-family: var(--font-primary);
+}
+
+.ingredient-input__add-btn:hover:not(:disabled) {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
+}
+
+.ingredient-input__add-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* ══════════════════════════════════════
+   Autocomplete Dropdown
+   ══════════════════════════════════════ */
+.autocomplete {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    max-height: 340px;
+    overflow-y: auto;
+    background: rgba(18, 22, 31, 0.97);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    animation: dropIn 0.2s ease-out;
+}
+
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.autocomplete__item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 0.85rem;
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background 0.15s;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.autocomplete__item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete__item:hover,
+.autocomplete__item--active {
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--text-primary);
+}
+
+.autocomplete__cat-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.autocomplete__name {
+    flex: 1;
+    text-transform: capitalize;
+}
+
+.autocomplete__name strong {
+    color: var(--primary);
+}
+
+.autocomplete__cat {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.autocomplete__freq {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(255, 217, 61, 0.12);
+    padding: 0.1rem 0.4rem;
+    border-radius: 8px;
+}
+
+/* ══════════════════════════════════════
+   Quick add chips
+   ══════════════════════════════════════ */
+.ingredient-input__quick,
+.ingredient-input__recent {
+    margin-bottom: 0.75rem;
+}
+
+.ingredient-input__quick-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.ingredient-input__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    font-family: var(--font-primary);
+    padding: 0.3rem 0.65rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: capitalize;
+}
+
+.chip:hover {
+    background: rgba(255, 107, 53, 0.1);
+    border-color: rgba(255, 107, 53, 0.35);
+    color: var(--primary-light);
+}
+
+.chip--frequent {
+    border-color: rgba(255, 217, 61, 0.25);
+}
+
+.chip--frequent:hover {
+    border-color: var(--accent);
+    background: rgba(255, 217, 61, 0.1);
+    color: var(--accent);
+}
+
+.chip--recent {
+    border-color: rgba(78, 205, 196, 0.2);
+    color: var(--secondary);
+}
+
+.chip--recent:hover {
+    border-color: var(--secondary);
+    background: rgba(78, 205, 196, 0.1);
+}
+
+.chip__count {
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: rgba(255, 217, 61, 0.18);
+    color: var(--accent);
+    padding: 0.05rem 0.35rem;
+    border-radius: 10px;
+    min-width: 16px;
+    text-align: center;
+}
+
+/* ══════════════════════════════════════
+   Tags
+   ══════════════════════════════════════ */
+.ingredient-input__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem 0.7rem;
+    background: rgba(78, 205, 196, 0.12);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 20px;
+    color: var(--secondary);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    animation: tagPop 0.25s ease-out backwards;
+}
+
+.tag__remove {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.1rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.55;
+    transition: opacity 0.15s;
+    padding: 0;
+}
+
+.tag__remove:hover {
+    opacity: 1;
+}
+
+@keyframes tagPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ── keyboard hint ── */
+.ingredient-input__hint {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.ingredient-input__hint kbd {
+    display: inline-block;
+    padding: 0.1rem 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 0.68rem;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0 0.1rem;
+}
