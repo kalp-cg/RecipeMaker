@@ -1,0 +1,152 @@
+/* ══════════════════════════════════════
+   App Layout & Structure
+   ══════════════════════════════════════ */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Main ── */
+.app-main {
+    flex: 1;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+/* ── Overlay (for history panel) ── */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 140;
+    animation: fadeInSimple 0.25s ease-out;
+}
+
+@keyframes fadeInSimple {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ══════════════════════════════════════
+   Create Section
+   ══════════════════════════════════════ */
+.create-section {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.create-section__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.back-btn:hover {
+    background: rgba(255, 107, 53, 0.12);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.create-section__title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.create-card {
+    padding: 2rem;
+}
+
+.create-card__actions {
+    display: flex;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+}
+
+.generate-btn {
+    flex: 1;
+    font-size: 1.05rem;
+    padding: 1rem 2rem;
+}
+
+/* ══════════════════════════════════════
+   Result Section
+   ══════════════════════════════════════ */
+.result-section {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.result-section__actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* ══════════════════════════════════════
+   Cancel Row (during loading)
+   ══════════════════════════════════════ */
+.cancel-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* ══════════════════════════════════════
+   Footer
+   ══════════════════════════════════════ */
+.app-footer {
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: auto;
+}
+
+.app-footer p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.app-footer strong {
+    color: var(--primary);
+}
+
+/* ══════════════════════════════════════
+   Responsive
+   ══════════════════════════════════════ */
+@media (max-width: 640px) {
+    .create-card {
+        padding: 1.25rem;
+    }
+
+    .create-card__actions {
+        flex-direction: column;
+    }
+
+    .result-section__actions {
+        flex-direction: column;
+    }
+}
