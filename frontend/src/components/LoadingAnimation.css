@@ -1,0 +1,157 @@
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ── pot ── */
+.loading__pot {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.loading__pot-body {
+    font-size: 4rem;
+    animation: potBounce 1.2s ease-in-out infinite;
+}
+
+@keyframes potBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.loading__steam {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.loading__steam span {
+    display: block;
+    width: 4px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    animation: steam 1.4s ease-in-out infinite;
+}
+
+.loading__steam span:nth-child(2) {
+    animation-delay: 0.25s;
+    height: 22px;
+}
+
+.loading__steam span:nth-child(3) {
+    animation-delay: 0.5s;
+    height: 16px;
+}
+
+@keyframes steam {
+    0% {
+        opacity: 0.3;
+        transform: translateY(0) scaleX(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateY(-10px) scaleX(1.3);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-22px) scaleX(0.5);
+    }
+}
+
+/* ── text ── */
+.loading__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+}
+
+/* ── progress bar ── */
+.loading__progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 280px;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.loading__progress {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.loading__progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--gradient-accent);
+    animation: progressIndeterminate 2s ease-in-out infinite;
+}
+
+@keyframes progressIndeterminate {
+    0% {
+        width: 0%;
+        margin-left: 0;
+    }
+
+    50% {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    100% {
+        width: 0%;
+        margin-left: 100%;
+    }
+}
+
+.loading__time {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    min-width: 30px;
+}
+
+/* ── tip carousel ── */
+.loading__tip {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 420px;
+    margin-bottom: 1rem;
+}
+
+.loading__tip-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    animation: fadeIn 0.5s ease-out;
+    line-height: 1.5;
+}
+
+.loading__disclaimer {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
