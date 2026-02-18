@@ -1,0 +1,77 @@
+.prefs {
+    margin-bottom: 1.5rem;
+}
+
+.prefs__section {
+    margin-bottom: 1.25rem;
+}
+
+.prefs__label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.prefs__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.prefs__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: var(--font-primary);
+    min-width: 68px;
+}
+
+.prefs__card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.prefs__card--active {
+    background: rgba(255, 107, 53, 0.14);
+    border-color: var(--primary);
+    color: var(--primary-light);
+    box-shadow: 0 0 12px rgba(255, 107, 53, 0.2);
+}
+
+.prefs__card-icon {
+    font-size: 1.2rem;
+}
+
+.prefs__card-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 600px) {
+    .prefs__card {
+        min-width: 56px;
+        padding: 0.45rem 0.6rem;
+    }
+
+    .prefs__card-icon {
+        font-size: 1rem;
+    }
+
+    .prefs__card-label {
+        font-size: 0.65rem;
+    }
+}
